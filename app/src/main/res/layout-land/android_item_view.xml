@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/image_view_android"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/question_textview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+
+    <Button
+        android:id="@+id/true_button"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:textSize="30dp"
+        android:text="True"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="casual"
+        android:layout_weight="0.3"/>
+
+    <Button
+        android:id="@+id/false_button"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:textSize="30dp"
+        android:text="False"
+        android:gravity="center"
+        android:fontFamily="casual"
+        android:layout_marginTop="5dp"
+        android:background="?attr/selectableItemBackground"
+        android:textStyle="bold"
+        android:layout_weight="0.3"/>
+
+
+</LinearLayout>
