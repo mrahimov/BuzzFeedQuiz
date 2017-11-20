@@ -56,12 +56,15 @@ public class AndroidViewHolder extends RecyclerView.ViewHolder implements View.O
 
                 if (model.isAnswerCorrect()) {
                     clickDelegate.incrementCount(++counter);
+                    trueButton.setEnabled(false);
                 }
                 break;
             case R.id.false_button:
 
                 if (!model.isAnswerCorrect()) {
                     clickDelegate.incrementCount(++counter);
+                    falseButton.setEnabled(false);
+
                 }
                 break;
         }

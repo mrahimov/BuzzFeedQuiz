@@ -9,7 +9,7 @@ public class QuizBook {
 
     public static String[] questions = new String[]{
 
-            "int x[] = new int[]{10,20,30};\n" + "\n" + "Arrays can also be created and initialize as in above statement.",// 1: true
+            "int x[] = new int[]{10,20,30}; Arrays can also be created and initialize as in above statement.",// 1: true
             "In an instance method or a constructor, \"this\" is a reference to the current object.",// 2: true
             "Garbage Collection is manual process.",                                                 // 3: false
             "Variable name can begin with a letter, \"$\", or \"_\".",                               // 4: true

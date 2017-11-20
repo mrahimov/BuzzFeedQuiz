@@ -17,7 +17,7 @@ import nyc.c4q.buzzfeedquizgame.controler.AndroidAdapter;
 import nyc.c4q.buzzfeedquizgame.controler.ClickDelegate;
 import nyc.c4q.buzzfeedquizgame.model.Model;
 
-public class AndroidQuiz extends AppCompatActivity {
+public class AndroidQuiz extends AppCompatActivity implements ClickDelegate {
 
     private boolean answer;
     private int aScore = 0;
@@ -26,6 +26,7 @@ public class AndroidQuiz extends AppCompatActivity {
     private Button buttonIsTrue, buttonIsFalse;
     private List<Model> androidQuiz;
     private int counter;
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class AndroidQuiz extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
 
         recyclerView.setAdapter(androidAdapter);
+        androidAdapter.setListener(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
     }
@@ -84,5 +86,14 @@ public class AndroidQuiz extends AppCompatActivity {
     }
 
 
+    @Override
+    public void incrementCount(int counter) {
+        count++;
+    }
+
+    @Override
+    public int getScore() {
+        return count;
+    }
 }
 

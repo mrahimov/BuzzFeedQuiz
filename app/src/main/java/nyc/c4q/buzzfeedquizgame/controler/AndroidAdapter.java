@@ -19,11 +19,12 @@ import nyc.c4q.buzzfeedquizgame.view.ResultViewHolder;
  * Created by muridjonrahimov on 11/16/17.
  */
 
-public class AndroidAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements ClickDelegate{
+public class AndroidAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private int counter = 0;
     private List<Model> list;
     private static final int VIEW_TYPE_QUESTION = 0;
     private static final int VIEW_TYPE_RESULT = 1;
+    private ClickDelegate listener;
 
     public AndroidAdapter(List<Model> list) {
         this.list = list;
@@ -49,12 +50,12 @@ public class AndroidAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case VIEW_TYPE_QUESTION:
                  Model model = list.get(position);
                  AndroidViewHolder androidViewHolder = (AndroidViewHolder) holder;
-                 androidViewHolder.onBind(model, this);
+                 androidViewHolder.onBind(model, listener);
                 break;
 
             case VIEW_TYPE_RESULT:
                 ResultViewHolder resultViewHolder = (ResultViewHolder) holder;
-                resultViewHolder.bindData(counter);
+                resultViewHolder.bindData(listener.getScore());
                 break;
         }
     }
@@ -73,9 +74,10 @@ public class AndroidAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
-    @Override
-    public void incrementCount(int counter) {
-        this.counter=counter;
+
+
+    public void setListener(ClickDelegate listener){
+        this.listener = listener;
     }
 }
 
